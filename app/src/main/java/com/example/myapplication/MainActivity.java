@@ -2,9 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +23,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     String name="https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+    String kurs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +33,29 @@ public class MainActivity extends AppCompatActivity {
         usd.execute(name);
     }
 
+    public void start(View view) {
+        Intent intent=new Intent(this,Table.class);
+        intent.putExtra("kurs",kurs);
+        startActivity(intent);
+
 }
-class Usddownload extends AsyncTask<String,Void,String>{
-    URL url=null;
-    HttpURLConnection httpURLConnection=null;
-    StringBuilder result=new StringBuilder();
+class Usddownload extends AsyncTask<String,Void,String> {
+    URL url = null;
+    HttpURLConnection httpURLConnection = null;
+    StringBuilder result = new StringBuilder();
 
     @Override
     protected String doInBackground(String... strings) {
         try {
-            url=new URL(strings[0]);
-            httpURLConnection=(HttpURLConnection)(url.openConnection());
-            InputStream stream=httpURLConnection.getInputStream();
-            InputStreamReader reader=new InputStreamReader(stream);
-            BufferedReader bufferedReader=new BufferedReader(reader);
-            String line= bufferedReader.readLine();
-            while (line!=null){
+            url = new URL(strings[0]);
+            httpURLConnection = (HttpURLConnection) (url.openConnection());
+            InputStream stream = httpURLConnection.getInputStream();
+            InputStreamReader reader = new InputStreamReader(stream);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line = bufferedReader.readLine();
+            while (line != null) {
                 result.append(line);
-                line=bufferedReader.readLine();
+                line = bufferedReader.readLine();
 
             }
             return result.toString();
@@ -65,16 +73,17 @@ class Usddownload extends AsyncTask<String,Void,String>{
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Log.d("Myresult",s);
+        Log.d("Myresult", s);
         try {
 
-            JSONArray array=new JSONArray(s);
-            JSONObject USD=array.getJSONObject(0);
-            String kurs=USD.getString("buy");
-            Log.d("Myresult",kurs);
+            JSONArray array = new JSONArray(s);
+            JSONObject USD = array.getJSONObject(0);
+            kurs = USD.getString("buy");
+            Log.d("Myresult", kurs);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
     }
+}
 }

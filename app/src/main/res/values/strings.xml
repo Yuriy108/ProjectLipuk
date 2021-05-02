@@ -16,4 +16,15 @@
         <item>2013</item>
         <item>2012</item>
     </string-array>
+    <string-array name="gas">
+        <item>Дизель</item>
+        <item>Бензин</item>
+        <item>Электро</item>
+
+
+    </string-array>
+    <string-array name="money">
+        <item>USD</item>
+        <item>EURO</item>
+    </string-array>
 </resources>

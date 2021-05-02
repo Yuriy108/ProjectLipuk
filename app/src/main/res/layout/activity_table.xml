@@ -19,60 +19,101 @@
 
 
         <TextView
-            android:layout_margin="10dp"
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Расчитать"
+            android:onClick="count"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+
+            android:textStyle="bold"
+            />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/right"
@@ -89,56 +130,87 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10px"
+            android:padding="10px"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/importer" />
+            android:layout_marginTop="15dp"
+            android:entries="@array/importer"
+            android:padding="20px"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/years" />
+            android:layout_marginTop="25dp"
+            android:entries="@array/years"
+            android:padding="10px"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:entries="@array/gas"
+            android:padding="10px"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTexMoney"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="70px"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:padding="10px"
+            android:hint="Введите стоимсть авто"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:entries="@array/money"
+            android:padding="10px"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextEngine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
-
-        <Spinner
-            android:id="@+id/spinner6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:padding="10px"
+           android:hint="Введите обьем двигателя"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginTop="60px"
+            android:padding="10px"
+            android:text="Очистить"
+            android:onClick="clear"
+            android:textSize="24dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 
